@@ -1,0 +1,15 @@
+<p style="height: 80%">1</p>
+<p style="height: 80%">2</p>
+
+<script src="build/sct.min.js"></script>
+<script>
+  const toolbarColor = new SCToolbar({
+    color: "red"
+  });
+
+  toolbarColor.animate({colors: ["red", "blue", "green", "yellow"]});
+
+  setTimeout(function(){
+   toolbarColor.stopAnimation();
+  }, 8000);
+</script>

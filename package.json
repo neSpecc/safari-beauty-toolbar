@@ -1,0 +1,16 @@
+{
+  "name": "safari-colorful-toolbar",
+  "version": "1.0.0",
+  "description": "Make the Safari Toolbar more consistent with your brand colors",
+  "main": "src/sct.ts",
+  "scripts": {
+    "minimize": "uglifyjs ./build/sct.js --output ./build/sct.min.js --comments"
+  },
+  "author": "Petr Savchenko",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1",
+    "uglify-js": "^3.3.20"
+  }
+}
