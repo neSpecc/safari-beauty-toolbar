@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Safari Beauty Toolbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<div class="sct">
+  <div class="sct__header">
+    <div class="sct__center-side">
+      <div class="sct__rotator">
+        <div class="sct__rotator-item sct__rotator-item--first" style="background-image: url('./assets/8.jpg') ">
+        </div>
+        <div class="sct__rotator-item sct__rotator-item--main" style="background-image: url('./assets/2.jpg') ">
+        </div>
+        <div class="sct__rotator-item sct__rotator-item--last" style="background-image: url('./assets/6.jpg') ">
+        </div>
+      </div>
+      <h1>Safari Beauty Toolbar</h1>
+      <h2>Make the Safari Toolbar more consistent with your brand colors</h2>
+      <div class="sct__header-caption">
+        Tiny zero-dependencies JavaScript module
+      </div>
+      <a class="sct__button sct__button--github" href="">
+        View on the GitHub
+      </a>
+      <br />
+      <a class="sct__link sct__link--yarn" href="">
+        Available via Yarn
+      </a>
+      <a class="sct__link sct__link--npm" href="">
+        Available via NPM
+      </a>
+    </div>
+  </div>
+  <div class="sct__center-side">
+    <div class="sct__try">
+      <h3>Try it yourself</h3>
+      <div class="sct__table">
+        <div class="sct__table-cell">
+          Set up an any color
+          <div class="sct__colors">
+            <span class="sct__colors-item sct__colors-item--red" onclick="demo.reset('red')"></span>
+            <span class="sct__colors-item sct__colors-item--blue" onclick="demo.reset('#519AFF')"></span>
+            <span class="sct__colors-item sct__colors-item--yellow" onclick="demo.reset('#F3FF6F')"></span>
+            <span class="sct__colors-item sct__colors-item--green" onclick="demo.reset('#62FF99')"></span>
+            <span class="sct__colors-item sct__colors-item--pink" onclick="demo.reset('#FFC5FA')"></span>
+            <input value="#CFEDEE">
+          </div>
+<code>const toolbarColor = new SBToolbar({
+  color: "red"
+});
+</code>
+        </div>
+        <div class="sct__table-cell">
+          Animation effect
+          <span class="sct__button" onclick="demo.animate(this)">
+            Try animation
+          </span>
+<code>toolbarColor.animate({
+  colors: ["#ff0a8a", "blue", "#61ffa7", "yellow"],
+  speed: 600
+});
+</code>
+        </div>
+        <div class="sct__table-cell">
+          Blinking effect
+          <span class="sct__button" onclick="demo.blink(this)">
+            Try to blink
+          </span>
+<code>toolbarColor.blink({
+  interval: 300,
+  transitionSpeed: 1000
+});
+</code>
+        </div>
+        <div class="sct__table-cell">
+          Progress animation
+          <span class="sct__button" onclick="demo.progress(this)">
+            Start progress
+          </span>
+<code>toolbarColor.startProgress({
+  color: "rgb(49, 82, 92)",
+  estimate: 3500
+});
+</code>
+        </div>
+      </div>
+      <div class="sct__docs">
+        Read a few lines of the <a href="">documentation</a>.
+      </div>
+    </div>
+    <div class="sct__how">
+      <h3>How it works</h3>
+      <p>
+        Module works only on the Safari browser on MacOS and iOS because they have a little transparency on the Toolbar.
+        So we can add the colorful layer and place it under the Toolbar. That's it. This tool just simplifies the trick.
+      </p>
+      <div class="sct__gifs">
+        <div class="sct__gif">
+
+        </div>
+        <div class="sct__gif">
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<script src="../build/sct.min.js"></script>
+<script src="demo.js" onload="demo.init(); new Rotator('sct__rotator-item');"></script>

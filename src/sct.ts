@@ -1,19 +1,19 @@
 /**
- * Safari Colorful Toolbar
+ * Safari Beauty Toolbar
  *
  * Make the Safari Toolbar more consistent with your brand colors.
  * Works only on the MacOS, Safari browser that has native toolbar's opacity
  *
  * @author Petr Savchenko <specc.dev@gmail.com>
  * @see CodeX - team of enthusiasts developers unifying students and graduates of the ITMO University {@link https://ifmo.su}
- * @licence MIT
+ * @license MIT
  * @preserve
  */
 
 /**
  * Configuration object
  */
-interface ISCTConfig {
+interface ISBTConfig {
   /**
    * @type {string} toolbar liner's color;
    */
@@ -50,7 +50,7 @@ interface IAnimationParams {
   speed?: number;
 }
 
-class SCToolbar {
+class SBToolbar {
 
   /**
    * Current revision number
@@ -96,7 +96,7 @@ class SCToolbar {
    * @constructor
    * @param options
    */
-  constructor(options: ISCTConfig) {
+  constructor(options: ISBTConfig) {
 
     if (!options || !options.color) {
       this.log("«color» option is missed");
@@ -131,9 +131,10 @@ class SCToolbar {
 
   /**
    * Reinitialize the Toolbar liner
-   * @param {ISCTConfig} [options] - you can reinitialize module with the different settings
+   * @param {ISBTConfig} [options] - you can reinitialize module with the different settings
    */
-  public reinit(options: ISCTConfig): void {
+  public reinit(options: ISBTConfig): void {
+    this.destroy();
 
     if (options && options.color) {
       this.color = options.color;
@@ -158,11 +159,9 @@ class SCToolbar {
     }
 
     /**
-     * If animation was fired previously, stop it
+     * Stop all previously fired animations
      */
-    if (this.animationInterval) {
-      this.stopAnimation();
-    }
+    this.stopAllEffects();
 
     this.underlayer.style["will-change"] = "opacity";
 
@@ -196,11 +195,9 @@ class SCToolbar {
     }
 
     /**
-     * If blinking was fired previously, stop it
+     * Stop all previously fired animations
      */
-    if (this.blinkingInterval) {
-      this.stopBlinking();
-    }
+    this.stopAllEffects();
 
     this.underlayer.style["will-change"] = "background-color";
 
@@ -210,18 +207,54 @@ class SCToolbar {
       speed = params.speed;
     }
 
-    this.underlayer.style.transition = `background-color ${speed / 1.1}ms ease`;
+    this.underlayer.style.transition = `background-color ${Math.floor(speed / 1.1)}ms ease`;
 
     this.animationInterval = setInterval(() => {
+
+      this.underlayer.style.backgroundColor = params.colors[this.currentColorIndex];
       this.currentColorIndex++;
 
-      if (this.currentColorIndex > params.colors.length){
+      if (this.currentColorIndex > params.colors.length) {
         this.currentColorIndex = 0;
       }
 
-      this.underlayer.style.backgroundColor = params.colors[this.currentColorIndex];;
-
     }, speed);
+  }
+
+  /**
+   * Show progress bar animation at the toolbar
+   * @param {string} [color] - bar color. Blue by default
+   * @param {string} [estimate] - estimate loading time in milliseconds. Uses as the animation speed.
+   */
+  public startProgress({color = "#05c7ff", estimate = 3500}): void {
+
+    if (!this.initialized) {
+      this.log("Module was not initialized");
+      return;
+    }
+
+    this.stopAnimation();
+    this.stopBlinking();
+
+    this.underlayer.style.transition = `none`;
+    this.underlayer.style.width = "0";
+    this.underlayer.style.transition = `width ${estimate}ms cubic-bezier(.12,.63,.81,.44)`;
+    this.underlayer.style.backgroundColor = color;
+
+    setTimeout(() => {
+      this.underlayer.style.width = "90%";
+    }, 100);
+  }
+
+  /**
+   * Finish progressbar animation
+   */
+  public stopProgress(): void {
+    this.underlayer.style.width = "100%";
+
+    setTimeout(() => {
+      this.underlayer.style.width = "auto";
+    }, 200);
   }
 
   /**
@@ -231,6 +264,7 @@ class SCToolbar {
     if (this.initialized && this.blinkingInterval) {
       clearTimeout(this.blinkingInterval);
       this.blinkingInterval = null;
+      this.underlayer.style.opacity = "1";
     }
   }
 
@@ -247,11 +281,20 @@ class SCToolbar {
   }
 
   /**
+   * Stop all animations
+   */
+  public stopAllEffects(): void {
+    this.stopAnimation();
+    this.stopBlinking();
+    this.stopProgress();
+  }
+
+  /**
    * Initialize the Toolbar
    */
   private init(): void {
 
-    if (!SCToolbar.supported) {
+    if (!SBToolbar.supported) {
       this.log("Module is not supported by current platform");
       return;
     }
@@ -274,7 +317,7 @@ class SCToolbar {
    * @return {boolean}
    */
   private static get supported(): boolean {
-    return SCToolbar.isSafari && (SCToolbar.isMac || SCToolbar.isIOS);
+    return SBToolbar.isSafari && (SBToolbar.isMac || SBToolbar.isIOS);
   }
 
   /**
@@ -316,7 +359,7 @@ class SCToolbar {
                   margin-right: 5px`;
 
     if (window.console) {
-      window.console.log("%cSCToolbar" + "%c" + output, style, "");
+      window.console.log("%cSBToolbar" + "%c" + output, style, "");
     }
   }
 
@@ -333,7 +376,10 @@ class SCToolbar {
     liner.style.right = "0";
     liner.style.height = "100px";
     liner.style.transform = "translateY(-99.99%)";
+    liner.style.zIndex = "9999";
     liner.style.backgroundColor = this.color;
+
+    liner.setAttribute("name", "safari-colorful-toolbar");
 
     document.body.appendChild(liner);
 
