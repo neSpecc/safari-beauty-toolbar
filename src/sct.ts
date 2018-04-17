@@ -1,8 +1,10 @@
 /**
  * Safari Beauty Toolbar
+ * {@link https://github.com/neSpecc/safari-beauty-toolbar}
  *
  * Make the Safari Toolbar more consistent with your brand colors.
  * Works only on the MacOS, Safari browser that has native toolbar's opacity
+ *
  *
  * @author Petr Savchenko <specc.dev@gmail.com>
  * @see CodeX - team of enthusiasts developers unifying students and graduates of the ITMO University {@link https://ifmo.su}

@@ -23,7 +23,7 @@
       <div class="sct__header-caption">
         Tiny zero-dependencies JavaScript module
       </div>
-      <a class="sct__button sct__button--github" href="">
+      <a class="sct__button sct__button--github" href="https://github.com/neSpecc/safari-beauty-toolbar">
         View on the GitHub
       </a>
       <br />
@@ -36,60 +36,68 @@
     </div>
   </div>
   <div class="sct__center-side">
-    <div class="sct__try">
+    <div class="sct__try" id="js-demo" hidden>
       <h3>Try it yourself</h3>
       <div class="sct__table">
         <div class="sct__table-cell">
-          Set up an any color
+          <label>
+            Set up an any color
+          </label>
           <div class="sct__colors">
             <span class="sct__colors-item sct__colors-item--red" onclick="demo.reset('red')"></span>
             <span class="sct__colors-item sct__colors-item--blue" onclick="demo.reset('#519AFF')"></span>
             <span class="sct__colors-item sct__colors-item--yellow" onclick="demo.reset('#F3FF6F')"></span>
             <span class="sct__colors-item sct__colors-item--green" onclick="demo.reset('#62FF99')"></span>
             <span class="sct__colors-item sct__colors-item--pink" onclick="demo.reset('#FFC5FA')"></span>
-            <input value="#CFEDEE">
+            <!--<input value="#CFEDEE">-->
           </div>
-<code>const toolbarColor = new SBToolbar({
-  color: "red"
+<code><span class="hcode--keyword">const</span> <span class="hcode--object">toolbarColor</span> = <span class="hcode--keyword">new</span> <span class="hcode--object">SBToolbar</span>({
+  <span class="hcode--property">color</span>: <span class="hcode--string" id="js-color-value">"red"</span>
 });
 </code>
         </div>
         <div class="sct__table-cell">
-          Animation effect
+          <label>
+            Animation effect
+          </label>
           <span class="sct__button" onclick="demo.animate(this)">
             Try animation
           </span>
-<code>toolbarColor.animate({
-  colors: ["#ff0a8a", "blue", "#61ffa7", "yellow"],
-  speed: 600
+<code><span class="hcode--object">toolbarColor</span>.<span class="hcode--method">animate</span>({
+  <span class="hcode--property">colors</span>: [<span class="hcode--string">"#ff0a8a"</span>, <span class="hcode--string">"blue"</span>, <span class="hcode--string">"#61ffa7"</span>, <span class="hcode--string">"yellow"</span>],
+  <span class="hcode--property">speed</span>: <span class="hcode--number">600</span>
 });
 </code>
         </div>
         <div class="sct__table-cell">
-          Blinking effect
+          <label>
+            Blinking effect
+          </label>
           <span class="sct__button" onclick="demo.blink(this)">
             Try to blink
           </span>
-<code>toolbarColor.blink({
-  interval: 300,
-  transitionSpeed: 1000
+<code><span class="hcode--object">toolbarColor</span>.<span class="hcode--method">blink</span>({
+  <span class="hcode--property">interval</span>: <span class="hcode--number">300</span>,
+  <span class="hcode--property">transitionSpeed</span>: <span class="hcode--number">1000</span>
 });
 </code>
         </div>
         <div class="sct__table-cell">
-          Progress animation
+          <label>
+            Progress animation
+          </label>
           <span class="sct__button" onclick="demo.progress(this)">
             Start progress
           </span>
-<code>toolbarColor.startProgress({
-  color: "rgb(49, 82, 92)",
-  estimate: 3500
+<code><span class="hcode--object">toolbarColor</span>.<span class="hcode--method">startProgress</span>({
+  <span class="hcode--property">color</span>: <span class="hcode--string">"rgb(49, 82, 92)"</span>,
+  <span class="hcode--property">estimate</span>: <span class="hcode--number">3500</span>
 });
 </code>
         </div>
       </div>
       <div class="sct__docs">
-        Read a few lines of the <a href="">documentation</a>.
+        Read a few lines of the <a href="https://github.com/neSpecc/safari-beauty-toolbar">documentation</a>.
       </div>
     </div>
     <div class="sct__how">
@@ -99,15 +107,19 @@
         So we can add the colorful layer and place it under the Toolbar. That's it. This tool just simplifies the trick.
       </p>
       <div class="sct__gifs">
-        <div class="sct__gif">
-
+        <div class="sct__gifs-item">
+          <video autoplay loop muted playsinline>
+            <source src="https://leonardo.osnova.io/8e15790a-ed96-6013-dabf-6b71836f020e/-/format/mp4/" type="video/mp4">
+          </video>
         </div>
-        <div class="sct__gif">
+        <div class="sct__gifs-item">
 
         </div>
       </div>
-
-
+    </div>
+    <div class="sct__footer">
+      Petr Savchenko,&nbsp; <a href="https://ifmo.su">CodeX</a>
+      <a class="sct__footer-right" href="https://github.com/neSpecc/safari-beauty-toolbar">https://github.com/neSpecc/safari-beauty-toolbar</a>
     </div>
   </div>
 </div>

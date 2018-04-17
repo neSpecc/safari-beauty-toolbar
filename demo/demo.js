@@ -5,6 +5,8 @@
  *
  * ƪ(˘⌣˘)ʃ
  */
+'use strict';
+
 var demo = function (demo) {
 
   /**
@@ -17,6 +19,15 @@ var demo = function (demo) {
    * Example module initialization
    */
   demo.init = function () {
+
+    var demoContainer = document.getElementById('js-demo');
+
+    if (!demo.supported){
+      return;
+    }
+
+    demoContainer.hidden = false;
+
 
     /**
      * Set the Toolbar to Blue
@@ -119,6 +130,11 @@ var demo = function (demo) {
    * @param {string} color - new Toolbar's  color
    */
   demo.reset = function (color) {
+
+    var colorValueHolder = document.getElementById('js-color-value');
+
+    colorValueHolder.textContent = '"' + color + '"';
+
     toolbarPane.reinit({
       color: color
     });
@@ -142,6 +158,38 @@ var demo = function (demo) {
       button.classList.remove('toggled');
       button.textContent = button.dataset.startText || button.textContent;
     });
+  }
+
+  /**
+   * Detect when module can be used
+   * @return {boolean}
+   */
+  demo.supported = function(){
+    return isSafari() && (isMac() || isIOS());
+  }();
+
+  /**
+   * Check if current platform is the Mac
+   * @return {boolean}
+   */
+  function isMac() {
+    return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+  }
+
+  /**
+   * Check if current platform is the IOS
+   * @return {boolean}
+   */
+  function isIOS() {
+    return !!navigator.platform.match(/(iPhone|iPod|iPad)/i);
+  }
+
+  /**
+   * Check if current browser is a Safari
+   * @return {boolean}
+   */
+  function isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   }
 
   return demo;
