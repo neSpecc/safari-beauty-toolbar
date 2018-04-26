@@ -2,11 +2,25 @@
   "name": "safari-colorful-toolbar",
   "version": "1.0.0",
   "description": "Make the Safari Toolbar more consistent with your brand colors",
-  "main": "src/sct.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neSpecc/safari-beauty-toolbar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neSpecc/safari-beauty-toolbar/issues"
+  },
+  "homepage": "https://ifmo.su/beauty-toolbar",
+  "main": "buils/sct.min.js",
   "scripts": {
     "minimize": "uglifyjs ./build/sct.js --output ./build/sct.min.js --comments",
     "css": "postcss ./demo/demo.pcss --no-map  -u postcss-cssnext postcss-nested -o ./demo/demo.css --watch"
   },
+  "keywords": [
+    "codex",
+    "safari",
+    "toolbar",
+    "branding"
+  ],
   "author": "Petr Savchenko",
   "license": "MIT",
   "devDependencies": {
