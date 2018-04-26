@@ -228,7 +228,7 @@ class SBToolbar {
    * @param {string} [color] - bar color. Blue by default
    * @param {string} [estimate] - estimate loading time in milliseconds. Uses as the animation speed.
    */
-  public startProgress({color = "#05c7ff", estimate = 3500}): void {
+  public startProgress({color, estimate} = {color: "#05c7ff", estimate: 3500}): void {
 
     if (!this.initialized) {
       this.log("Module was not initialized");
@@ -240,8 +240,8 @@ class SBToolbar {
 
     this.underlayer.style.transition = `none`;
     this.underlayer.style.width = "0";
-    this.underlayer.style.transition = `width ${estimate}ms cubic-bezier(.12,.63,.81,.44)`;
-    this.underlayer.style.backgroundColor = color;
+    this.underlayer.style.transition = `width ${estimate || 3500}ms cubic-bezier(.12,.63,.81,.44)`;
+    this.underlayer.style.backgroundColor = color || "#05c7ff";
 
     setTimeout(() => {
       this.underlayer.style.width = "90%";

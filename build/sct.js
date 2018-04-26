@@ -136,7 +136,7 @@ var SBToolbar = /** @class */ (function () {
      */
     SBToolbar.prototype.startProgress = function (_a) {
         var _this = this;
-        var _b = _a.color, color = _b === void 0 ? "#05c7ff" : _b, _c = _a.estimate, estimate = _c === void 0 ? 3500 : _c;
+        var _b = _a === void 0 ? { color: "#05c7ff", estimate: 3500 } : _a, color = _b.color, estimate = _b.estimate;
         if (!this.initialized) {
             this.log("Module was not initialized");
             return;
@@ -145,8 +145,8 @@ var SBToolbar = /** @class */ (function () {
         this.stopBlinking();
         this.underlayer.style.transition = "none";
         this.underlayer.style.width = "0";
-        this.underlayer.style.transition = "width " + estimate + "ms cubic-bezier(.12,.63,.81,.44)";
-        this.underlayer.style.backgroundColor = color;
+        this.underlayer.style.transition = "width " + (estimate || 3500) + "ms cubic-bezier(.12,.63,.81,.44)";
+        this.underlayer.style.backgroundColor = color || "#05c7ff";
         setTimeout(function () {
             _this.underlayer.style.width = "90%";
         }, 100);
