@@ -39,7 +39,7 @@ This makes the Toolbar colorful. Try to reload the page and scroll it down.
 
 > Note. Because of transparency value of the Toolbar, you probably should pass little more saturated color than the usual brand's color.
 
-![](/demo/assets/demo.gif)
+![](demo/assets/demo.gif)
 
 ## Public methods
 
@@ -57,7 +57,7 @@ There are some additional methods that your can find useful in some cases.
 
 ### Blinking
 
-![](/demo/assets/sbt-blink.gif)
+![](demo/assets/sbt-blink.gif)
 
 ```js
 blink({interval, transitionSpeed})
@@ -82,7 +82,7 @@ toolbarColor.blink({
 
 ### Animation
 
-![](/demo/assets/sbt-animate.gif)
+![](demo/assets/sbt-animate.gif)
 
 ```js
 animate({colors, speed})
@@ -107,7 +107,7 @@ toolbarColor.animate({
 
 ### Progress
 
-![](/demo/assets/sbt-progress.gif)
+![](demo/assets/sbt-progress.gif)
 
 Method allowed to use Toolbar's underlayer as a progressbar.
 
