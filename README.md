@@ -39,7 +39,7 @@ This makes the Toolbar colorful. Try to reload the page and scroll it down.
 
 > Note. Because of transparency value of the Toolbar, you probably should pass little more saturated color than the usual brand's color.
 
-![](https://leonardo.osnova.io/8e15790a-ed96-6013-dabf-6b71836f020e/-/format/mp4/)
+![](https://leonardo.osnova.io/8e15790a-ed96-6013-dabf-6b71836f020e/-/format/gif/)
 
 ## Public methods
 
@@ -57,7 +57,7 @@ There are some additional methods that your can find useful in some cases.
 
 ### Blinking
 
-![](https://leonardo.osnova.io/5686d87d-46c7-35d1-e492-6e07718f8e94/-/format/mp4/)
+![](https://media.giphy.com/media/257ID6G4FZCSrG8s3L/giphy.gif)
 
 ```js
 blink({interval, transitionSpeed})
@@ -82,7 +82,7 @@ toolbarColor.blink({
 
 ### Animation
 
-![](https://leonardo.osnova.io/da95d8c4-32f4-641a-bc09-3a36edad2ad9/-/format/mp4/)
+![](https://media.giphy.com/media/Dr1f98ChS0tSPqtE2A/giphy.gif)
 
 ```js
 animate({colors, speed})
@@ -107,7 +107,7 @@ toolbarColor.animate({
 
 ### Progress
 
-![](https://leonardo.osnova.io/7d7964bc-558e-9f07-9981-c2bb70d77695/-/format/mp4/)
+![](https://media.giphy.com/media/6wgtox4EwCscp9pnS3/giphy.gif)
 
 Method allowed to use Toolbar's underlayer as a progressbar.
 
