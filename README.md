@@ -26,7 +26,7 @@ You can also download build/sct.min.js and manually connect it with your project
 Basic usage is quite simple: just pass your brand color to the constructor.
 
 ```js
-const toolbarColor = new SCToolbar({
+const toolbarColor = new SBToolbar({
   color: "red"
 });
 ```
