@@ -57,7 +57,7 @@ There are some additional methods that your can find useful in some cases.
 
 ### Blinking
 
-![](https://media.giphy.com/media/257ID6G4FZCSrG8s3L/giphy.gif)
+![](/demo/assets/sbt-blink.gif)
 
 ```js
 blink({interval, transitionSpeed})
@@ -82,7 +82,7 @@ toolbarColor.blink({
 
 ### Animation
 
-![](https://media.giphy.com/media/Dr1f98ChS0tSPqtE2A/giphy.gif)
+![](/demo/assets/sbt-animate.gif)
 
 ```js
 animate({colors, speed})
@@ -107,7 +107,7 @@ toolbarColor.animate({
 
 ### Progress
 
-![](https://media.giphy.com/media/6wgtox4EwCscp9pnS3/giphy.gif)
+![](/demo/assets/sbt-progress.gif)
 
 Method allowed to use Toolbar's underlayer as a progressbar.
 
