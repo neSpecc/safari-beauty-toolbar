@@ -39,7 +39,7 @@ This makes the Toolbar colorful. Try to reload the page and scroll it down.
 
 > Note. Because of transparency value of the Toolbar, you probably should pass little more saturated color than the usual brand's color.
 
-![](https://leonardo.osnova.io/8e15790a-ed96-6013-dabf-6b71836f020e/-/format/gif/)
+![](/demo/assets/demo.gif)
 
 ## Public methods
 
