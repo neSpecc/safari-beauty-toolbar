@@ -19,7 +19,7 @@ or with NPM
 npm i safari-beauty-toolbar --save
 ```
 
-You can also download build/sct.min.js and manually connect it with your project.
+You can also download [build/sct.min.js](https://github.com/neSpecc/safari-beauty-toolbar/blob/master/build/sct.min.js) and manually connect it with your project.
 
 ## Usage 
 
