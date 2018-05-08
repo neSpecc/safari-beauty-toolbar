@@ -39,6 +39,8 @@ This makes the Toolbar colorful. Try to reload the page and scroll it down.
 
 > Note. Because of transparency value of the Toolbar, you probably should pass little more saturated color than the usual brand's color.
 
+> Note. Place the initialization code at the bottom of `<body>`-tag or call after document-ready event.  
+
 ![](demo/assets/demo.gif)
 
 ## Public methods
