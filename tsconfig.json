@@ -1,7 +1,5 @@
 {
-  "compileOnSave": true,
   "compilerOptions" : {
-    "outDir": "build",
     "target": "es5"
   }
 }

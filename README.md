@@ -7,7 +7,7 @@ Tiny JavaScript module that makes the Safari Toolbar colorful. It uses native to
 
 ## Installation
 
-Install module via Yarn
+Install module via Yarn, then import to the Code.
 
 ```shell
 yarn add safari-beauty-toolbar
@@ -19,7 +19,11 @@ or with NPM
 npm i safari-beauty-toolbar --save
 ```
 
-You can also download [build/sct.min.js](https://github.com/neSpecc/safari-beauty-toolbar/blob/master/build/sct.min.js) and manually connect it with your project.
+You can also download [dist/sct.min.js](https://github.com/neSpecc/safari-beauty-toolbar/blob/master/dist/sct.min.js) and manually connect it with your project.
+
+```js
+import SBToolbar from 'safari-beauty-toolbar';
+```
 
 ## Usage 
 
