@@ -7,10 +7,10 @@
     "url": "https://github.com/neSpecc/safari-beauty-toolbar/issues"
   },
   "homepage": "https://ifmo.su/beauty-toolbar",
-  "main": "build/sct.min.js",
+  "main": "dist/sct.min.js",
   "scripts": {
-    "minimize": "uglifyjs ./build/sct.js --output ./build/sct.min.js --comments",
-    "css": "postcss ./demo/demo.pcss --no-map  -u postcss-cssnext postcss-nested -o ./demo/demo.css --watch"
+    "css": "postcss ./demo/demo.pcss --no-map  -u postcss-cssnext postcss-nested -o ./demo/demo.css --watch",
+    "build": "webpack -p --entry=./src/sct.ts --module-bind ts=ts-loader --output=./dist/sct.min.js --output-library-target=umd --output-library=SBToolbar"
   },
   "keywords": [
     "codex",
@@ -24,9 +24,11 @@
     "postcss-cli": "^5.0.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-nested": "^3.0.0",
+    "ts-loader": "^4.4.2",
     "tslint": "^5.9.1",
     "typescript": "^2.8.1",
-    "uglify-js": "^3.3.20"
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0"
   },
   "private": false
 }

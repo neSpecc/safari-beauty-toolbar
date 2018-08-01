@@ -52,8 +52,7 @@ interface IAnimationParams {
   speed?: number;
 }
 
-class SBToolbar {
-
+export = class SBToolbar {
   /**
    * Current revision number
    */
